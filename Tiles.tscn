@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/tile.gd" type="Script" id=1]
+[ext_resource path="res://Assets/tile_gray.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30, 14 )
+
+[node name="Tiles" type="Node"]
+
+[node name="Gray Tiles" type="Node" parent="."]
+
+[node name="Tile" type="StaticBody2D" parent="Gray Tiles" groups=[
+"Tiles",
+]]
+position = Vector2( 508, 204 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Gray Tiles/Tile"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gray Tiles/Tile"]
+shape = SubResource( 1 )
